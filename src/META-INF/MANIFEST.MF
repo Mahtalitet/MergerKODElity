@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: opencsv-3.7.jar simple-xml-2.7.1.jar commons-lang3-3.4.jar
+Main-Class: MergerUtilityGUI
+

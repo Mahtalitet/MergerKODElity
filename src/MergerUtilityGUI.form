@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MergerUtilityGUI">
+  <grid id="27dc6" binding="MainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="560" height="560"/>
+    </constraints>
+    <properties>
+      <enabled value="true"/>
+      <font size="14"/>
+      <maximumSize width="2147483647" height="2147483647"/>
+      <minimumSize width="560" height="300"/>
+      <opaque value="false"/>
+      <preferredSize width="560" height="300"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="c0bd2" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="b1025" class="javax.swing.JRadioButton" binding="mResToCsvRB">
+            <constraints/>
+            <properties>
+              <actionCommand value="RadioButton"/>
+              <font swing-font="CheckBox.font"/>
+              <hideActionText value="false"/>
+              <selected value="true"/>
+              <text value="Resources to CSV"/>
+            </properties>
+          </component>
+          <component id="6bfcd" class="javax.swing.JRadioButton" binding="mCsvToResRB">
+            <constraints/>
+            <properties>
+              <font swing-font="CheckBox.font"/>
+              <text value="CSV to Resources"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="cd146" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="ec68f" class="javax.swing.JButton" binding="mGenerateButton">
+            <constraints/>
+            <properties>
+              <enabled value="false"/>
+              <font swing-font="Button.font"/>
+              <text value="Generate CSV"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="2b482" layout-manager="GridBagLayout">
+        <constraints border-constraint="East"/>
+        <properties>
+          <alignmentX value="0.5"/>
+          <alignmentY value="0.0"/>
+          <opaque value="true"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="48f94" class="javax.swing.JButton" binding="mDeleteResourceButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <alignmentX value="0.5"/>
+              <enabled value="false"/>
+              <font size="12"/>
+              <margin top="2" left="20" bottom="2" right="20"/>
+              <text value="Delete Resource"/>
+            </properties>
+          </component>
+          <component id="162a" class="javax.swing.JButton" binding="mAddResourcesButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <alignmentX value="0.5"/>
+              <label value="Add Resources"/>
+              <text value="Add Resources"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <scrollpane id="74fb2" binding="mResourcesListScrollPane">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <name value=""/>
+          <verticalScrollBarPolicy value="20"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="a70e9" class="javax.swing.JList" binding="mResourcesList">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+              <font size="12"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>

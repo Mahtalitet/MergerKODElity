@@ -1,0 +1,6 @@
+RESOURCE_TYPE;OS_TYPE;KEY;OLD_VALUE;NEW_VALUE;IS_TRANSLATABLE
+string;BOTH;activity_filters_title;Filter
+string;BOTH;app_name_subtitle;Amazing worldwide
+string;IOS;nav_search;Search
+string-array;ANDROID;favorite_tabs;Amasing!
+string-array;ANDROID;favorite_tabs;Bad request

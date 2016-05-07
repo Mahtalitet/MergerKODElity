@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name_subtitle">Amazing worldwide</string>
+    <string name="activity_filters_title">Filter</string>
+    <string-array name="favorite_tabs">
+        <item>Amasing!</item>
+        <item>Bad request</item>
+    </string-array>
+</resources>

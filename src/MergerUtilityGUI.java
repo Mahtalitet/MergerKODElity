@@ -26,13 +26,11 @@ public class MergerUtilityGUI implements ParsingErrorHandler {
     private JScrollPane mResourcesListScrollPane;
     private JFileChooser mFileChooser;
     private JFileChooser mDirectoryChooser;
-    private ParsingStatusDialog mInformationDialog;
 
     public MergerUtilityGUI() {
         mRadioButtonGroup = new ButtonGroup();
         mRadioButtonGroup.add(mResToCsvRB);
         mRadioButtonGroup.add(mCsvToResRB);
-        mInformationDialog = new ParsingStatusDialog();
 
         mFileChooser = returnOpenFileChooser(MergerUtilityStaticVariables.Gui.FILE_CHOOSER_TITLE_FOR_RESOURCES,
                 MergerUtilityStaticVariables.Gui.FILE_CHOOSER_EXTENSIONS_TITLE_RESOURCES,

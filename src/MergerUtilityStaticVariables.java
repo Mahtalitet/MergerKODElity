@@ -112,8 +112,16 @@ public class MergerUtilityStaticVariables {
     }
 
     public static class Gui {
+        public static String MENU_SETTINGS_TITLE ="Settings";
+        public static String MENUITEM_MAIN_SETTINGS_TITLE ="Main Settings";
+        public static String MENUITEM_RES_TO_CSV_TITLE ="Res To CSV Settings";
+        public static String MENUITEM_CSV_TO_RES_TITLE ="CSV To Res Settings";
+
+
+
         public static String APP_NAME = "Merger KODElity";
         public static String APP_VERSION = "v 2.1";
+
         public static String TEXT_ADD_RESOURCES = "Add Resources";
         public static String TEXT_DELETE_RESOURCES = "Delete Resource(s)";
         public static String TEXT_GENERATE_RESOURCES = "Generate Resources!";

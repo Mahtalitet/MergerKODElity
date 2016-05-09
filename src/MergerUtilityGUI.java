@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MergerUtilityGUI implements ParsingErrorHandler {
 
-    private static MergerUtilityGUI mergerUtilityGUI;
+//    private static MergerUtilityGUI mergerUtilityGUI;
 
     private JPanel MainPanel;
     private JRadioButton mResToCsvRB;
@@ -33,7 +33,6 @@ public class MergerUtilityGUI implements ParsingErrorHandler {
         mRadioButtonGroup.add(mResToCsvRB);
         mRadioButtonGroup.add(mCsvToResRB);
         mInformationDialog = new ParsingStatusDialog();
-
 
         mFileChooser = returnOpenFileChooser(MergerUtilityStaticVariables.Gui.FILE_CHOOSER_TITLE_FOR_RESOURCES,
                 MergerUtilityStaticVariables.Gui.FILE_CHOOSER_EXTENSIONS_TITLE_RESOURCES,
@@ -132,14 +131,14 @@ public class MergerUtilityGUI implements ParsingErrorHandler {
                     if (mResToCsvRB.isSelected()) {
 //                        disableGuiWhileSaveToCsv();
                         System.out.println("We will generate CSV...");
-                        parsingResult = new ParserManager(mergerUtilityGUI).parseBanchOfFilesToCSV(files, directoryToSave);
+                        parsingResult = new ParserManager(MergerUtilityGUI.this).parseBanchOfFilesToCSV(files, directoryToSave);
                         resetGuiToNormalStateAfterSaveToCsv();
                     }
 
                     if (mCsvToResRB.isSelected()) {
 //                        disableGuiWhileSaveToRes();
                         System.out.println("We will generate RES...");
-                        parsingResult = new ParserManager(mergerUtilityGUI).parseBanchOfFilesFromCSV(files, directoryToSave);
+                        parsingResult = new ParserManager(MergerUtilityGUI.this).parseBanchOfFilesFromCSV(files, directoryToSave);
 //                        resetGuiToNormalStateAfterSaveToRes();
                     }
                 }
@@ -253,13 +252,29 @@ public class MergerUtilityGUI implements ParsingErrorHandler {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame(MergerUtilityStaticVariables.Gui.APP_NAME+" "+MergerUtilityStaticVariables.Gui.APP_VERSION);
-        mergerUtilityGUI = new MergerUtilityGUI();
-        frame.setContentPane(mergerUtilityGUI.MainPanel);
+        frame.setContentPane(new MergerUtilityGUI().MainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addMenuBarInFrame(frame);
         frame.pack();
         frame.setResizable(false);
         frame.setVisible(true);
     }
+
+    public static void addMenuBarInFrame(JFrame frame) {
+        JMenuBar menuBar = new JMenuBar();
+        JMenu settingsMenu = new JMenu(MergerUtilityStaticVariables.Gui.MENU_SETTINGS_TITLE);
+        JMenuItem mainSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_MAIN_SETTINGS_TITLE);
+        JMenuItem resToCsvSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_RES_TO_CSV_TITLE);
+        JMenuItem csvToResSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_CSV_TO_RES_TITLE);
+
+        settingsMenu.add(mainSettingsMenuItem);
+        settingsMenu.add(resToCsvSettingsMenuItem);
+        settingsMenu.add(csvToResSettingsMenuItem);
+
+        menuBar.add(settingsMenu);
+        frame.setJMenuBar(menuBar);
+    }
+
 
     @Override
     public void onSuccessEventCreated(String message) {

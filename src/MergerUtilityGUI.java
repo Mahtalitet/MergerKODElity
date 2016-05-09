@@ -260,14 +260,20 @@ public class MergerUtilityGUI implements ParsingErrorHandler {
 
     public static void addMenuBarInFrame(JFrame frame) {
         JMenuBar menuBar = new JMenuBar();
-        JMenu settingsMenu = new JMenu(MergerUtilityStaticVariables.Gui.MENU_SETTINGS_TITLE);
-        JMenuItem mainSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_MAIN_SETTINGS_TITLE);
-        JMenuItem resToCsvSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_RES_TO_CSV_TITLE);
-        JMenuItem csvToResSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_CSV_TO_RES_TITLE);
+//        JMenu settingsMenu = new JMenu(MergerUtilityStaticVariables.Gui.MENU_SETTINGS_TITLE);
+        JMenuItem settingsMenu = new JMenuItem(MergerUtilityStaticVariables.Gui.MENU_SETTINGS_TITLE);
+        settingsMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MergerUtilityMainSettingsGUI.showModalForm(frame, settingsMenu.getText());
+             }
+        });
+//        JMenuItem resToCsvSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_RES_TO_CSV_TITLE);
+//        JMenuItem csvToResSettingsMenuItem = new JMenuItem(MergerUtilityStaticVariables.Gui.MENUITEM_CSV_TO_RES_TITLE);
 
-        settingsMenu.add(mainSettingsMenuItem);
-        settingsMenu.add(resToCsvSettingsMenuItem);
-        settingsMenu.add(csvToResSettingsMenuItem);
+//        settingsMenu.add(mainSettingsMenuItem);
+//        settingsMenu.add(resToCsvSettingsMenuItem);
+//        settingsMenu.add(csvToResSettingsMenuItem);
 
         menuBar.add(settingsMenu);
         frame.setJMenuBar(menuBar);
